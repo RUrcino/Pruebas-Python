@@ -8,25 +8,7 @@ class Persona:
         self.sexo = sexo
 
 
-    def __setnombre(self,nombre):
-        self.nombre = nombre
 
-    def __getnombre(self):
-        return self.nombre
-
-    def __setapellidos(self, apellidos):
-        self.apellidos = apellidos
-
-    def __getapellidos(self):
-        return self.apellidos
-
-
-    def __setedad(self,edad):
-        self.edad = edad
-
-    def __getedad(self):
-        return self.edad
-    persona = property(__getnombre,__setnombre)
 
 
 
@@ -41,10 +23,13 @@ class Profesor(Persona):
         super().__init__(nombre,apellidos,edad,ocupacion,turno,sexo)
         self.especialidad = especialidad
         self.salario = salario
+    def __str__(self):
+        return "\n----Datos del Profesor-----\nNombre> {}\nApellidos> {} \nEdad> {}\nOcupacion> {}\nTurno> {}\nSexo> {}\nEspecialidad> {}\nSalario> {}".format(
+            self.nombre,self.apellidos,self.edad,self.ocupacion,self.turno,self.sexo,self.especialidad,self.salario)
 
 
 
 
-Rodrigo = Profesor("Rodrigo","Urcino",23,"Pre-Venta","M",'M',"Redes",10.500)
 
-print("Nombre: ",Rodrigo.persona.nombre)
+
+
